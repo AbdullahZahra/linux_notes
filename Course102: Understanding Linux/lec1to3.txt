@@ -1,0 +1,49 @@
+Lecture 2: Unwrapping Linux
+
+(Windows file system layout)
+- Every device has its own tree.
+- Every tree has its significant letter like, C, D, etc...
+
+Linux file system layout
+- Has only one tree.
+- Unified file system hierarchy.
+- Linux can handle many devices through mounting points. (mount / unmount commands)
+
+______________________
+
+Lecture 3: Basic Concepts and Commands
+
+- General format of commands --> $<command> [option] [arguments]
+- Command can be issued on their own like $ls , $pwd , $cd
+- The options are optional and start with - or --
+- Some commands:
+$ls (to list files)
+$ls -a (OR) $ls --all (List all files including hidden files)
+$ls -l (List with long format)
+$ls -t (list files based on time stamp)
+$ls -S (to list files based on file size)
+$ls -r (to reverse list order)
+$ls -d (to list only directories)
+$ls -R (Recursive: list files inside subdirectories)
+$ls <dir> (list files inside the mentioned directory)
+$ls <fiel> (list the mentioned file)
+-----------
+$tree (to list a tree of files)
+$pwd (to show the current directory)
+-----------
+$cd (to move around in the tree)
+$cd - (go to the previous directory)
+-----------
+$mkdir (to make directories)
+$mkdir -p ../folder1/folder2 (to create intermediate folders if needed)
+-----------
+$cp (to copy files and directories)
+$cp -r (recursive: to copy directories and subdirecories)
+-----------
+$mv (to move or rename files and directories)
+-----------
+$rm (to remove files and directories)
+$rm -i (interactive: ask before delete)
+$rm -f (force remove)
+-----------
+$clear (to clear the screen)
