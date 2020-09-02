@@ -1,0 +1,59 @@
+Lecture 4: Using Wild Cards
+
+- Wild cards are patterns that work as placeholders in file names and directory names that are used to apply the command on a group of 
+files/directories that share something in their name.
+
+_________________________________________________
+
+The "*" Wild Card:
+- The "*" can replace any set of characters (including none) in the file/directory name.
+$rm *.php
+$rm p*
+$rm *.*htm*
+$rm -r *.*
+$rm -r * -->> remove everything
+_________________________________________________
+
+The "?" Wild Card:
+- The "?" wild card stands for any single character
+$rm 40?.shtml
+$rm ?0?.shtml
+_________________________________________________
+
+[<chars>] and [!<chars>]
+- We can have more restriction than the use of "?" by specifying a limited set of options for the character.
+"[ars]": Stands for a single character from the list a,r,s
+"[!ars]": Stands for any single character except for the list a,r,s
+"[2-5]": Stands for a single character from the range 2 to 5
+"[a-l]": Stands for a single character from the range 'a' to 'l'
+"[1-37-9]": Stands for 1,2,3,7,8,9
+"[a-chk]": Stands for a,b,c,h,k
+$rm [ab]bc.txt
+$rm [!ab]bc.txt
+$rm -r ab[c-fh-j]
+__________________________________________________
+
+[[:<Class Name>:]]
+"[[:<Class Name>:]]" stands for a single character belonging to the specified class
+some of used classes,
+[[:alnum:]] Alpha Numeric Characters (a-z, A-Z, 0-9)
+[[:alpha:]] Alphabets (a-z, A-Z)
+[[:digit:]] Digits (0-9)
+[[:lower:]] Lower case characters (a-z)
+[[:upper:]] Upper case characters (A-Z)
+$cp results-[[:digit:]][[:digit:]]-[[:alpha:]].log ~/log
+__________________________________________________
+
+Use of Curly Brackets "{}"
+- Curly brackets are used to group selections
+$rm {*.log, *.txt}
+__________________________________________________
+
+Escape sequence "\"
+- Some special letters has a meaning (such as space,*,",',(,...)
+- It is not recommended to use these letters if file/directory names
+- But if we have to then there is a special way of dealing with them,
+- If we need to delete a file name "my results.txt"
+$rm my\ results.txt
+___________________________________________________
+$touch <file name> to create an empty file
